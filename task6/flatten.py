@@ -4,15 +4,9 @@ def flatten(l: list, depth = None) -> list:
     res = list()
 
     def rec_traverse(el, depth):
-        if isinstance(el, list):
-            if depth is None:
-                for x in el:
-                    rec_traverse(x, depth)
-            elif depth >= 0:
-                for x in el:
-                    rec_traverse(x, depth - 1)
-            else:
-                res.append(el)
+        if isinstance(el, list) and (depth is None or depth >= 0):
+            for x in el:
+                rec_traverse(x, depth if depth is None else depth - 1)
         else:
             res.append(el)
 
