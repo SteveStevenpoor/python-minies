@@ -56,6 +56,3 @@ def format_table(benchmarks, algos, results: list):
         print_string(benchmarks[i], results[i], cols_widths)
 
 
-format_table(["best case", "the worst case"],
-["quick sort", "merge sort", "bubble sort"],
-[[1.239274560235, 1.56, 2.0], [3.3, 2.9, 3]])
